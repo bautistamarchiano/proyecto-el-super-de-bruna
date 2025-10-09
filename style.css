@@ -497,7 +497,11 @@ footer p {
   }
   main {
     min-height: 100vh;
-  }  
+  }
+  .titulos{
+   font-size: 40px;
+   margin-top: 10px;
+  }
 }
 /*tablet*/
 @media only screen and (min-width: 481px) and (max-width: 780px) {
@@ -506,7 +510,7 @@ footer p {
         max-width: 450px;
     }
     .titulos {
-      font-size: 50px;
+      font-size: 48px;
       margin-top: 10px;
     }
 }
