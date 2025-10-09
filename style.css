@@ -237,22 +237,24 @@ form button:hover {
   display: block;
   border-radius: 8px;
 }
+
 #catalogo {
   padding: 30px;
-  background: #fff8ee;
+  background: transparent;
   text-align: center;
+}
+
+.catalogo-grid {
+  background: #fff8ee;
+  border-radius: 15px;
+  padding: 20px;
+  display: inline-block;
 }
 
 #catalogo h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #d35400;
-}
-
-.catalogo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
 }
 
 .producto {
