@@ -465,6 +465,11 @@ footer p {
     gap: 8px; 
   }
 
+  body {
+  background-size: cover;
+  background-position: center top;
+  background-attachment: scroll;
+ } 
   .navegacion {
     padding: 8px 10px;
     width: 100%;
