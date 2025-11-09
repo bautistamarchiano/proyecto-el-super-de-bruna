@@ -1,0 +1,56 @@
+@use 'sass:color';
+@use 'variables';
+
+@mixin transition($time: 0.3s) {
+  transition: all $time ease;
+}
+
+@mixin box-shadow($shadow: 0 4px 10px rgba(0, 0, 0, 0.1)) {
+  box-shadow: $shadow;
+}
+
+@mixin fade-in($duration: 0.6s) {
+  animation: fadeIn $duration ease-in;
+}
+
+@mixin slide-up($duration: 0.5s) {
+  animation: slideUp $duration ease-out;
+}
+
+@mixin pulse($duration: 2s) {
+  animation: pulse $duration ease-in-out infinite;
+}
+
+@mixin button-style($bg, $color: null, $hover-bg: null) { 
+  background-color: $bg;
+  
+  color: if($color == null, variables.$color_7, $color); 
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.75em 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  @include transition(0.3s); 
+
+  &:hover {
+    @if $hover-bg == null {
+      background-color: color.adjust($bg, $lightness: 10%); 
+    } @else {
+      background-color: $hover-bg;
+    }
+    transform: translateY(-2px);
+    @include box-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+  }
+
+  &:active {
+    @if $hover-bg == null {
+     background-color: color.adjust($bg, $lightness: -5%);
+    } @else {
+      background-color: color.adjust($hover-bg, $lightness: -5%);
+    }
+    transform: translateY(0);
+  }
+}
